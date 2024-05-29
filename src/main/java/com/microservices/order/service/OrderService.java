@@ -19,6 +19,7 @@ public class OrderService {
     private static Order mapToOrder(OrderRequest orderRequest) {
         Order order = new Order();
         order.setOrderNumber(UUID.randomUUID().toString());
+        order.setSkuCode(orderRequest.skuCode());
         order.setPrice(orderRequest.price());
         order.setAmount(orderRequest.quantity() );
         return order;
